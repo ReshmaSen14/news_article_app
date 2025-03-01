@@ -5,22 +5,24 @@
 '''
 3. And do the deployment for the Task 1
 '''
-import importlib.metadata
 
-# Print installed packages
-installed_packages = [dist.metadata["Name"] for dist in importlib.metadata.distributions()]
-print("Installed packages:", installed_packages)
 import streamlit as st
 import pandas as pd
-import os
 import subprocess
+import sys
 
-# Ensure nltk is installed
-try:
-    import nltk
-except ImportError:
-    subprocess.run(["pip", "install", "nltk"])
-    import nltk
+# Function to install a package
+def install_and_import(package):
+    try:
+        __import__(package)
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+        __import__(package)
+
+install_and_import("nltk")
+
+import nltk
+
 
 # IMPORTING REQUIRED PACKAGES:
 
