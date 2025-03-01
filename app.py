@@ -5,27 +5,9 @@
 '''
 3. And do the deployment for the Task 1
 '''
-
+# IMPORTING REQUIRED PACKAGES:
 import streamlit as st
 import pandas as pd
-import subprocess
-import sys
-
-# Function to install a package
-def install_and_import(package):
-    try:
-        __import__(package)
-    except ImportError:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-        __import__(package)
-
-install_and_import("nltk")
-
-import nltk
-
-
-# IMPORTING REQUIRED PACKAGES:
-
 import nltk
 import matplotlib.pyplot as plt
 import seaborn as sns
