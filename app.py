@@ -5,6 +5,15 @@
 '''
 3. And do the deployment for the Task 1
 '''
+import os
+import subprocess
+
+# Ensure nltk is installed
+try:
+    import nltk
+except ImportError:
+    subprocess.run(["pip", "install", "nltk"])
+    import nltk
 
 # IMPORTING REQUIRED PACKAGES:
 import streamlit as st
