@@ -5,6 +5,11 @@
 '''
 3. And do the deployment for the Task 1
 '''
+import pkg_resources
+installed_packages = [pkg.key for pkg in pkg_resources.working_set]
+print(installed_packages)  # This will show installed packages in the logs
+import streamlit as st
+import pandas as pd
 import os
 import subprocess
 
@@ -16,8 +21,7 @@ except ImportError:
     import nltk
 
 # IMPORTING REQUIRED PACKAGES:
-import streamlit as st
-import pandas as pd
+
 import nltk
 import matplotlib.pyplot as plt
 import seaborn as sns
